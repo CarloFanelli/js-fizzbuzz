@@ -1,0 +1,8 @@
+.w_square{
+    width: 110px;
+    aspect-ratio: 1;
+}
+
+.w_square>h3{
+    font-size: 1.5rem;
+}

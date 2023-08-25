@@ -6,6 +6,9 @@ Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
 
 BONUS 1:
 Crea un container nel DOM , aggiungendo (attraverso la funzione append()) un elemento html con il numero o la stringa corretta da mostrare.
+
+BONUS 2:
+Applica stili differenti agli elementi aggiunti al DOM nel BONUS 1, a seconda che il valore inserito sia un numero, un fizz, un buzz o un fizzbuzz. Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.
 */
 
 
@@ -28,34 +31,34 @@ for (let i = 1; i <= 100; i++) {
     if (i % 3 == 0 && i % 5 != 0) {
 
         value = 'Fizz';
-        // console.log(value);
-        /* singleNumberDOM.append(value);
-        liDOM.append(singleNumberDOM);
-        listNumberDOM.append(liDOM); */
+        // console.log(value); - debug
+        liDOM.classList.add('m-2','bg-info','w_square','d-flex','justify-content-center','align-items-center','rounded-circle')
+        singleNumberDOM.classList.add('text-white')
+
 
     } else if (i % 5 == 0 && i % 3 != 0) {
 
         value = 'Buzz';
-        // console.log(value);
-        /* singleNumberDOM.append(value);
-        liDOM.append(singleNumberDOM);
-        listNumberDOM.append(liDOM); */
+        // console.log(value); - debug
+        liDOM.classList.add('m-2','bg-success','w_square','d-flex','justify-content-center','align-items-center','rounded-circle')
+        singleNumberDOM.classList.add('text-white')
+        
 
     } else if (i % 3 == 0 && i % 5 == 0) {
 
         value = 'FizzBuzz';
-        // console.log(value);
-        /* singleNumberDOM.append(value);
-        liDOM.append(singleNumberDOM);
-        listNumberDOM.append(liDOM); */
+        // console.log(value); - debug
+        liDOM.classList.add('m-2','bg-danger','w_square','d-flex','justify-content-center','align-items-center','rounded-circle')
+        singleNumberDOM.classList.add('text-dark')
+        
 
     } else {
 
         value = i;
-        // console.log(value);
-        /* listNumberDOM.append(singleNumberDOM);
-        liDOM.append(singleNumberDOM);
-        singleNumberDOM.append(value); */
+        // console.log(value); - debug
+        liDOM.classList.add('m-2','bg-white','w_square','d-flex','justify-content-center','align-items-center','rounded-circle')
+        singleNumberDOM.classList.add('text-danger')
+       
 
     }
 
