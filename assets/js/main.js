@@ -14,13 +14,14 @@ Crea un container nel DOM , aggiungendo (attraverso la funzione append()) un ele
 
 const listNumberDOM = document.getElementById('listNumber');
 
-// creo l'elemento list item che inserirò nel DOM e il titolo
-
-const liDOM = document.createElement('li');
-const singleNumberDOM = document.createElement('h3');
 
 // eseguo il ciclo e controllo la divisibilità, stampo direttamente nel DOM
 for (let i = 1; i <= 100; i++) {
+
+    // creo l'elemento list item che inserirò nel DOM e il titolo (spostato nel ciclo perché così ad ogni iterazione del for mi crea le due const)
+
+    const liDOM = document.createElement('li');
+    const singleNumberDOM = document.createElement('h3');
 
     let value;
 
@@ -28,36 +29,39 @@ for (let i = 1; i <= 100; i++) {
 
         value = 'Fizz';
         // console.log(value);
-        singleNumberDOM.append(value);
+        /* singleNumberDOM.append(value);
         liDOM.append(singleNumberDOM);
-        listNumberDOM.append(liDOM);
+        listNumberDOM.append(liDOM); */
 
     } else if (i % 5 == 0 && i % 3 != 0) {
 
         value = 'Buzz';
         // console.log(value);
-        singleNumberDOM.append(value);
+        /* singleNumberDOM.append(value);
         liDOM.append(singleNumberDOM);
-        listNumberDOM.append(liDOM);
+        listNumberDOM.append(liDOM); */
 
     } else if (i % 3 == 0 && i % 5 == 0) {
 
         value = 'FizzBuzz';
         // console.log(value);
-        singleNumberDOM.append(value);
+        /* singleNumberDOM.append(value);
         liDOM.append(singleNumberDOM);
-        listNumberDOM.append(liDOM);
+        listNumberDOM.append(liDOM); */
 
     } else {
 
         value = i;
         // console.log(value);
-        singleNumberDOM.append(value);
+        /* listNumberDOM.append(singleNumberDOM);
         liDOM.append(singleNumberDOM);
-        listNumberDOM.append(liDOM);
+        singleNumberDOM.append(value); */
 
     }
 
     console.log(value);
+    singleNumberDOM.append(value);
+    listNumberDOM.append(liDOM);
+    liDOM.append(singleNumberDOM);
 
 }
