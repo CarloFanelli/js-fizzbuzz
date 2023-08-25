@@ -3,33 +3,61 @@ Scrivi un programma che stampi in console i numeri da 1 a 100, ma che:
  per i multipli di 3 stampi “Fizz” al posto del numero
 e per i multipli di 5 stampi “Buzz”.
 Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
+
+BONUS 1:
+Crea un container nel DOM , aggiungendo (attraverso la funzione append()) un elemento html con il numero o la stringa corretta da mostrare.
 */
 
 
-for (let i = 0; i <= 100; i++) {
-    
+
+//recupero e "collego" gli elementi dal DOM
+
+const listNumberDOM = document.getElementById('listNumber');
+
+// creo l'elemento list item che inserirò nel DOM e il titolo
+
+const liDOM = document.createElement('li');
+const singleNumberDOM = document.createElement('h3');
+
+// eseguo il ciclo e controllo la divisibilità, stampo direttamente nel DOM
+for (let i = 1; i <= 100; i++) {
+
     let value;
 
     if (i % 3 == 0 && i % 5 != 0) {
 
         value = 'Fizz';
-        console.log(value);
+        // console.log(value);
+        singleNumberDOM.append(value);
+        liDOM.append(singleNumberDOM);
+        listNumberDOM.append(liDOM);
 
     } else if (i % 5 == 0 && i % 3 != 0) {
 
         value = 'Buzz';
-        console.log(value);
+        // console.log(value);
+        singleNumberDOM.append(value);
+        liDOM.append(singleNumberDOM);
+        listNumberDOM.append(liDOM);
 
     } else if (i % 3 == 0 && i % 5 == 0) {
 
         value = 'FizzBuzz';
-        console.log(value);
+        // console.log(value);
+        singleNumberDOM.append(value);
+        liDOM.append(singleNumberDOM);
+        listNumberDOM.append(liDOM);
 
     } else {
-        
+
         value = i;
-        console.log(value);
+        // console.log(value);
+        singleNumberDOM.append(value);
+        liDOM.append(singleNumberDOM);
+        listNumberDOM.append(liDOM);
 
     }
+
+    console.log(value);
 
 }
